@@ -1,0 +1,22 @@
+﻿@page
+@model GastosApp.Pages.AddModel
+@{
+    ViewData["Title"] = "Agregar Gasto";
+}
+
+<h2>Agregar Gasto</h2>
+
+<form method="post">
+    <label form="Descripcion">Descripcion</label>
+    <input type="text" name="Descripcion" required />
+
+    <label for="Monto">Monto</label>
+    <input type="number" name="Monto" step="0.01" required />
+
+    <label for="Monto">Fecha</label>
+    <input type="date" name="Fecha" required />
+
+    <button type="submit">Guardar</button>
+</form>
+
+<a asp-page="Index">Volver a la lista de gastos</a>

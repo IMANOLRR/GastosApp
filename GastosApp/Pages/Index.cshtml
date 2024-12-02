@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Gestion de Datos";
+}
+
+<h2>Gestion de Gastos</h2>
+<p>Capital disponible: @Model.Capital</p>
+
+@* <a href="/Add">Agregar Gasto</a> *@
+
+<a asp-page="Add">Agregar Gastos</a>
+
+<table>
+    <tr>
+        <th>Descripcion</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+    </tr>
+    @foreach (var gasto in Model.Gastos)
+    {
+     <tr>
+            <td>@gasto.Descripcion</td>
+            <td>@gasto.Monto</td>
+            <td>@gasto.Fecha.ToShortDateString()</td>
+     </tr>   
+    }
+</table>
+
+<div class="message-box">
+    <p>¡Esta web tendrá mejoras proximamente, por temas de tiempo y otros trabajos se entrega este resultado temporalmente!</p>
+</div>
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
